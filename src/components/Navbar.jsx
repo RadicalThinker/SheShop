@@ -66,15 +66,16 @@ const Navbar = () => {
                 <Link to="/orders" className="cursor-pointer hover:text-black">
                   Orders
                 </Link>
+                {(role=='Seller') && <Link to="/list-products" className="cursor-pointer hover:text-black">
+                  <p>List Products</p>
+                  </Link>}
                 <button
             onClick={logoutHandler}
-            className="mt-6 px-6 py-2 bg-red-500 text-white text-lg rounded-md shadow-md hover:bg-red-600"
+            className="mt-6 px-6 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600"
           >
             Logout
           </button>
-                {(role=='seller') && <Link to="/list-products" className="cursor-pointer hover:text-black">
-                  <p>List Products</p>
-                  </Link>}
+
               </div>
             </div>
           )}
