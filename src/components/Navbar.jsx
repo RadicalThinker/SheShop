@@ -6,8 +6,14 @@ import Logo from '../myassets/SheShop.png'
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, getCartCount, isloggedIn } = useContext(ShopContext);
-
+  const { setShowSearch, getCartCount, isloggedIn, role } = useContext(ShopContext);
+  console.log(role)
+  const logoutHandler = () => {
+    localStorage.removeItem('userDetails');
+    setIsLoggedIn(false);
+    setUserDetails(null);
+    navigate('/login');
+  };
   return (
     <div className=" w-full sticky z-10 bg-white top-0">
       <div className="flex items-center justify-between px-3 py-3 font-medium">
@@ -60,6 +66,15 @@ const Navbar = () => {
                 <Link to="/orders" className="cursor-pointer hover:text-black">
                   Orders
                 </Link>
+                <button
+            onClick={logoutHandler}
+            className="mt-6 px-6 py-2 bg-red-500 text-white text-lg rounded-md shadow-md hover:bg-red-600"
+          >
+            Logout
+          </button>
+                {(role=='seller') && <Link to="/list-products" className="cursor-pointer hover:text-black">
+                  <p>List Products</p>
+                  </Link>}
               </div>
             </div>
           )}

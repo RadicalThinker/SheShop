@@ -9,6 +9,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = ({ children }) => {
   const currency = '₹';
   const delivery_fee = 10;
+  const [role, setRole] = useState('');
   const [isloggedIn, setIsLoggedIn] = useState(false);
   const [search, setSearch] = useState('');
   const [showSearch, setShowSearch] = useState(false);
@@ -108,6 +109,8 @@ const ShopContextProvider = ({ children }) => {
     navigate,
     isloggedIn,
     setIsLoggedIn,
+    role,
+    setRole,
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

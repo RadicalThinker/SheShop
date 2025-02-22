@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ShopContext } from '../Context/ShopContext';
 import { assets } from '../assets/assets';
 import RelatedProducts from '../Components/RelatedProducts';
+import ProductDetails from '../components/Review';
 
 const Product = () => {
   const { productId } = useParams();
@@ -129,25 +130,7 @@ const Product = () => {
       </div>
 
       {/* ---------------------- Product Description and Review Section ----------------------*/}
-      <div className="mt-10">
-        <div className="flex">
-          <b className="px-5 py-3 text-sm border">Description</b>
-          <p className="px-5 py-3 text-sm border">Reviews (122)</p>
-        </div>
-
-        <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
-          <p>
-            E-commerce websites have gained immense popularity due to their
-            convenience, accessibility, and the global reach they offer.
-          </p>
-          <p>
-            E-commerce websites typically display products along with detailed
-            descriptions, images, prices, and any available variations (eg,
-            sizes, colors).
-          </p>
-        </div>
-      </div>
-
+     <ProductDetails/>
       {/* ---------------------- Related Products ---------------------- */}
       <RelatedProducts
         category={productsData.category}

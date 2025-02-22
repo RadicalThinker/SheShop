@@ -4,9 +4,8 @@ import { ShopContext } from '../Context/ShopContext';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-  const { setIsLoggedIn } = useContext(ShopContext);
+  const { setIsLoggedIn, role, setRole } = useContext(ShopContext);
   const [currentState, setCurrentState] = useState('Sign Up');
-  const [role, setRole] = useState('Buyer');
   const [stayLoggedIn, setStayLoggedIn] = useState(false);
   const [sellerDetails, setSellerDetails] = useState({
     igUsername: '',
@@ -25,7 +24,7 @@ const Login = () => {
         setIsLoggedIn(true);
         // If the user is a seller, navigate to the Seller Products page
         if (parsedUser.role === 'Seller') {
-          navigate('/seller-products');
+          navigate('/list-products');
         }
       } catch (error) {
         console.error('Error parsing user details from localStorage:', error);
@@ -74,7 +73,7 @@ const Login = () => {
 
         // Redirect to Seller Products page if the user is a seller
         if (result.user.role === 'Seller') {
-          navigate('/seller-products');
+          navigate('/list-products');
         }
       } else {
         alert('Error: ' + result.error);
@@ -119,7 +118,7 @@ const Login = () => {
                 Add Product
               </Link>
               <Link
-                to="/seller-products"
+                to="/list-products"
                 className="px-6 py-2 bg-green-500 text-white text-lg rounded-md hover:bg-green-600"
               >
                 View Products
