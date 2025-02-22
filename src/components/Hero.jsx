@@ -10,6 +10,7 @@ import { img } from 'motion/react-client';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import Sliderlogo from './Slider';
 
 
 const data = [
@@ -34,6 +35,7 @@ const Hero = () => {
   };
   
   return (
+    <div>
     <div className="flex flex-col sm:flex-row border      border-gray-400 ">
       {/* Hero Left Side */}
       <div className="w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
@@ -64,6 +66,10 @@ const Hero = () => {
       </Slider>
       </div>
     </div>
+          <div className="h-full bg-gray-950">
+          <Sliderlogo/>
+          </div>
+          </div>
   );
 };
 
