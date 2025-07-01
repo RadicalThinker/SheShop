@@ -5,13 +5,7 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: 'http://localhost:5173',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
 
-app.use(express.json());
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -128,7 +122,7 @@ app.get('/products', async (req, res) => {
 });
 
 app.use(express.json()); // For parsing application/json
-
+app.use(cors());
 
 const PORT = process.env.PORT || 5530;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -6,8 +6,9 @@ import Logo from '../myassets/SheShop.png'
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, getCartCount, isloggedIn, role } = useContext(ShopContext);
+  const { setShowSearch, getCartCount, isloggedIn, role, setIsLoggedIn } = useContext(ShopContext);
   console.log(role)
+  console.log(isloggedIn)
   const logoutHandler = () => {
     localStorage.removeItem('userDetails');
     setIsLoggedIn(false);
@@ -69,7 +70,7 @@ const Navbar = () => {
                 {(role=='Seller') && <Link to="/list-products" className="cursor-pointer hover:text-black">
                   <p>List Products</p>
                   </Link>}
-                <button
+                  <button
             onClick={logoutHandler}
             className="mt-6 px-6 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600"
           >

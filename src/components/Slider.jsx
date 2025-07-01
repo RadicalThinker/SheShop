@@ -1,5 +1,5 @@
-import Slider from 'react-infinite-logo-slider'
-import sheshoplogo from '../myassets/sheshoplogo.png'
+import Slider from "react-infinite-logo-slider";
+
 const Sliderlogo = () => {
     
     return (
