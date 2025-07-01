@@ -1,4 +1,4 @@
-import { assets } from '../assets/assets';
+
 import kid1 from '../myassets/kid1.jpg';
 import kid2 from '../myassets/kid3.jpg';
 import belt from '../myassets/belt.jpg';
@@ -6,7 +6,7 @@ import jacket from '../myassets/jacket.jpg';
 import cosmetics from '../myassets/cosmetics.jpg';
 import jack from '../myassets/jacket.jpg';
 import lower from '../myassets/lower.jpg';
-import { img } from 'motion/react-client';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
@@ -61,7 +61,7 @@ const Hero = () => {
       <div className='w-full sm:w-1/2 flex flex-col justify-center h-[500px]  bg-white-400 p-8'>
       <Slider {...settings}>
         {data.map((d) => (
-          <img src={d} alt="" className="w-full sm:w-full h-[500px] object-contain justify-center overflow-hidden" />
+          <img key={d} src={d} alt="" className="w-full sm:w-full h-[500px] object-contain justify-center overflow-hidden" />
         ))}
       </Slider>
       </div>

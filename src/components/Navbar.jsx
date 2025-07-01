@@ -12,8 +12,8 @@ const Navbar = () => {
   const logoutHandler = () => {
     localStorage.removeItem('userDetails');
     setIsLoggedIn(false);
-    setUserDetails(null);
-    navigate('/login');
+    // setUserDetails(null);
+    // navigate('/login');
   };
   return (
     <div className=" w-full sticky z-10 bg-white top-0">
