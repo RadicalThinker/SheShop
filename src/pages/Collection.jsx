@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets';
-import Title from '../Components/Title';
-import ProductItem from '../Components/ProductItem';
+import Title from '../components/Title';
+import ProductItem from '../components/ProductItem';
 import { motion } from "motion/react"
 
 const Collection = () => {
@@ -79,10 +79,12 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category, subCategory, search, showSearch, products]);
 
   useEffect(() => {
     sortProducts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortType]);
 
   // Check if Men, Women, or Kids are selected

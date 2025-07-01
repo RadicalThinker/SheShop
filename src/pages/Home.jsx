@@ -1,8 +1,8 @@
-import BestSeller from '../Components/BestSeller';
-import Hero from '../Components/Hero';
-import LatestCollection from '../Components/LatestCollection';
-import NewsLetterBox from '../Components/NewsLetterBox';
-import OurPolicies from '../Components/OurPolicies';
+import BestSeller from '../components/BestSeller';
+import Hero from '../components/Hero';
+import LatestCollection from '../components/LatestCollection';
+import NewsLetterBox from '../components/NewsLetterBox';
+import OurPolicies from '../components/OurPolicies';
 import { motion } from "motion/react"
 const Home = () => {
   return (
